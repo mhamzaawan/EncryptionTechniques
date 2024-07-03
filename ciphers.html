@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption & Decryption</title>
+    <link rel="stylesheet" href="ciphers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="logo2.png" width="15%" alt="logo">
+            <h1 id="logo">DigitalFort Insight</h1>
+        </div>
+        <div class="right">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ciphers.html">Ciphers</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="home" id="homeSection">
+    <div class="container">
+        <h2 id="heading">Encryption and Decryption</h2>
+        <select id="cipherSelect">
+            <option value="caesar">Caesar Cipher</option>
+            <option value="vigenere">Vigenere Cipher</option>
+            <option value="rail">Rail Fence Cipher</option>
+            <option value="Mono-Alphabetic">Mono-Alphabetic Cipher</option>
+            <option value="sha256">Hashing</option>
+
+        </select>
+
+        
+
+        <textarea id="inputText" placeholder="Enter text..."></textarea>
+
+        <label for="key"></label>
+        <input type="text" id="key" placeholder="Enter your key...">
+
+        <div class="buttons">
+            <button onclick="encrypt()">Encrypt</button>
+            <button onclick="decrypt()">Decrypt</button>
+            <button onclick="process()">Hashing</button>
+        </div>
+
+        <div id="output"></div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+   
+
+
+</body>
+</html>

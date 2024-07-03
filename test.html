@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>One-Time Pad Encryption and Decryption</title>
+ <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    input, button {
+      font-size: 14px;
+    }
+    button {
+      cursor: pointer;
+    }
+ </style>
+</head>
+<body>
+ <h1>One-Time Pad Encryption and Decryption</h1>
+ <label for="message">Message:</label>
+ <input type="text" id="message" name="message" value="Hello, World!">
+ <br><br>
+ <label for="key">Key:</label>
+ <input type="text" id="key" name="key" value="This is my secret key">
+ <br><br>
+ <button onclick="encryptDecrypt()">Encrypt/Decrypt</button>
+ <br><br>
+ <div id="result"></div>
+
+ <script>
+    function encryptDecrypt() {
+      const message = document.getElementById('message').value;
+      const key = document.getElementById('key').value;
+      const resultDiv = document.getElementById('result');
+      
+      // Call encryption and decryption functions
+      const encryptedMessage = oneTimePadEncrypt(message, key);
+      const originalMessage = oneTimePadDecrypt(encryptedMessage, key);
+      
+      // Display the result
+      resultDiv.innerHTML = 'Encrypted message: ' + encryptedMessage + '<br><br>' + 'Original message: ' + originalMessage;
+    }
+    
+    // Your JavaScript encryption and decryption functions here
+    function oneTimePadEncrypt(message, key) {
+  let encryptedMessage = '';
+  for (let i = 0; i < message.length; i++) {
+    encryptedMessage += String.fromCharCode(message.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+  }
+  return encryptedMessage;
+}
+
+function oneTimePadDecrypt(encryptedMessage, key) {
+  return oneTimePadEncrypt(encryptedMessage, key);
+}
+
+// Usage
+const message = 'Hello, World!';
+const key = 'This is my secret key';
+
+const encryptedMessage = oneTimePadEncrypt(message, key);
+console.log('Encrypted message:', encryptedMessage);
+
+const originalMessage = oneTimePadDecrypt(encryptedMessage, key);
+console.log('Original message:', originalMessage);
+
+
+//Decryption
+function oneTimePadDecrypt(encryptedMessage, key) {
+  let decryptedMessage = '';
+  for (let i = 0; i < encryptedMessage.length; i++) {
+    const encryptedCharCode = encryptedMessage.charCodeAt(i);
+    const keyCharCode = key.charCodeAt(i);
+    const originalCharCode = (encryptedCharCode - keyCharCode + 26) % 26;
+    decryptedMessage += String.fromCharCode(originalCharCode + 65);
+  }
+  return decryptedMessage;
+}
+ </script>
+</body>
+</html>

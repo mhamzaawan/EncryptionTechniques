@@ -1,0 +1,188 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.left {
+    position: absolute;
+    display: block;
+    left: 60px;
+    top: 15px;
+    /*border: 2px solid red;*/
+   width: 42%;
+}
+
+.left h1{
+    color: white;
+    font-family: 'Bree Serif', serif;
+    margin-left: 109px;
+    margin-top: -45px;
+}
+
+.right {
+    position: absolute;
+    display: block;
+    width: 40%;
+    right: -169px;
+    top: 24px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar li {
+    list-style: none;
+    padding: 0px 11px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    width: 10%;
+    border-radius: 100px;
+    padding: 5px 20px;
+    transition: 0.6s ease;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.navbar li a:hover {
+    color: black;
+    background-color: white;
+}
+
+.container {
+    margin: 50px auto;
+    text-align: center;
+}
+.container h2{
+    color: aqua;
+    font-size: 50px;
+}
+
+#inputText{
+    width: 80%;
+    height: 36%;
+    margin: 27px;
+}
+textarea{
+    border-radius: 13px;
+    padding: 9px;
+}
+
+#heading{
+    margin-bottom: 30px;
+    display: block;
+    
+    margin-top: -183px;
+}
+
+
+input{
+    border: 2px solid white;
+    width: 30%;
+    height: 25%;
+    border-radius: 22px;
+    text-align: center;
+}
+
+button{
+    border-radius: 11px;
+    border: white;
+    background: aqua;
+
+}
+button:hover{
+    background-color: rgb(88, 166, 166);
+    transition: 1s ease-in;
+}
+.buttons{
+    margin-top: 15px;
+
+}
+
+select {
+    /* Reset */
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    width: 20em;
+    height: 3em;
+    padding: 0 4em 0 1em;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, rgba(255, 255, 255, 0.3) 3em, rgba(255, 255, 255, 0.2) 3em);
+    color: white;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* <option> colors */
+    /* Remove focus outline */
+    /* Remove IE arrow */
+  }
+  select option {
+    color: inherit;
+    background-color: #043449;
+  }
+  select:focus {
+    outline: none;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+
+
+button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#output {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: aqua;
+    
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+}
+
+
+/*Home*/
+.home{
+display: flex;
+flex-direction: column;
+padding: 3px 200px;
+height: 589px;
+justify-content: center;
+align-items: center;
+
+
+margin: 89px 91px;
+}
+.home::before{
+content: "";
+background: url(bg_4.jpg) no-repeat center center/cover;
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+z-index: -1;
+opacity: 0.8;
+}
+
+#output.hash-result {
+    color: green;
+    font-weight: bold;
+}
